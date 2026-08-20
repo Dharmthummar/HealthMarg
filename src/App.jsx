@@ -19,7 +19,7 @@ import './App.css';
 export default function App() {
   const [showPreloader, setShowPreloader] = useState(true);
   const [viewMode, setViewMode] = useState('frame'); // 'frame' | 'fullscreen'
-  const [activeTab, setActiveTab] = useState('home'); // 'home' | 'beds' | 'labs' | 'equipment' | 'lodging' | 'support' | 'journey'
+  const [activeTab, setActiveTab] = useState('home');
   const [selectedCity, setSelectedCity] = useState('mehsana');
   const [selectedHospital, setSelectedHospital] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
@@ -51,7 +51,7 @@ export default function App() {
         />
 
         {/* Page Content Viewport */}
-        <main className="flex-1 overflow-y-auto bg-slate-50 relative">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden bg-slate-50 relative">
           {activeTab === 'home' && (
             <Home
               onNavigate={setActiveTab}
@@ -114,7 +114,7 @@ export default function App() {
 
       {/* 4. Emergency Helpline Triage Modal */}
       {showEmergencyModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+        <div className="fixed inset-0 z-[70] bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
           <div className="bg-white/95 backdrop-blur-xl border border-white text-slate-900 rounded-3xl p-5 w-full max-w-xs shadow-2xl space-y-4 text-center animate-scaleIn">
             
             <div className="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mx-auto border border-rose-200 animate-pulse">
@@ -143,7 +143,7 @@ export default function App() {
 
             <button
               onClick={() => setShowEmergencyModal(false)}
-              className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition"
+              className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition active:scale-95"
             >
               Close
             </button>

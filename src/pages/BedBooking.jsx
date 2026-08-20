@@ -118,7 +118,9 @@ export default function BedBooking({ selectedHospital, setSelectedHospital, onBo
                 <img
                   src={hosp.image}
                   alt={hosp.name}
-                  className="w-24 h-24 rounded-2xl object-cover shrink-0 border border-slate-100 shadow-inner"
+                  className="w-20 h-20 rounded-2xl object-cover shrink-0 border border-slate-100 shadow-inner bg-slate-100"
+                  loading="lazy"
+                  onError={(e) => { e.target.onerror = null; e.target.style.background = 'linear-gradient(135deg, #f1f5f9, #e2e8f0)'; }}
                 />
 
                 <div className="flex-1 min-w-0">
@@ -187,8 +189,8 @@ export default function BedBooking({ selectedHospital, setSelectedHospital, onBo
 
       {/* Bed Reservation Modal */}
       {bookingModalHosp && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-slate-900 border border-slate-800 text-slate-100 rounded-3xl p-5 w-full max-w-sm shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto no-scrollbar animate-scaleIn">
+        <div className="fixed inset-0 z-[55] bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 animate-fadeIn">
+          <div className="bg-slate-900 border border-slate-800 text-slate-100 rounded-3xl p-4 w-full max-w-sm shadow-2xl space-y-3 max-h-[85vh] overflow-y-auto no-scrollbar animate-scaleIn">
             
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div>

@@ -100,8 +100,8 @@ export default function Diagnostics({ onBookingSuccess }) {
 
       {/* Test Booking Modal */}
       {selectedTest && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
-          <div className="bg-slate-900 border border-slate-800 text-slate-100 rounded-3xl p-5 w-full max-w-sm shadow-2xl space-y-4">
+        <div className="fixed inset-0 z-[55] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 animate-fadeIn">
+          <div className="bg-slate-900 border border-slate-800 text-slate-100 rounded-3xl p-4 w-full max-w-sm shadow-2xl space-y-3 max-h-[85vh] overflow-y-auto no-scrollbar">
             
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div>

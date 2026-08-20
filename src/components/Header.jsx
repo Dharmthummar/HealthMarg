@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { MapPin, PhoneCall, ChevronDown, ArrowLeft } from 'lucide-react';
 import { ORIGIN_CITIES, DESTINATION_HUBS } from '../data/mockData';
 
+const logoBase = import.meta.env.BASE_URL || './';
+
 export default function Header({ activeTab, setActiveTab, selectedCity, setSelectedCity, onShowEmergencyModal }) {
   const [showLocationPicker, setShowLocationPicker] = useState(false);
 
@@ -28,7 +30,7 @@ export default function Header({ activeTab, setActiveTab, selectedCity, setSelec
           >
             {/* Exact graphic logo image icon */}
             <img 
-              src="/LOGO.png" 
+              src={`${logoBase}LOGO.png`}
               alt="HealthMarg Logo" 
               className="w-8 h-8 object-contain drop-shadow-xs transition-transform group-hover:scale-105 shrink-0" 
             />
@@ -68,7 +70,7 @@ export default function Header({ activeTab, setActiveTab, selectedCity, setSelec
 
       {/* Heartland Region Selector Modal */}
       {showLocationPicker && (
-        <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+        <div className="fixed inset-0 z-[55] bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
           <div className="bg-white/95 backdrop-blur-xl border border-white text-slate-900 rounded-3xl p-5 w-full max-w-xs shadow-2xl space-y-4 animate-scaleIn">
             
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">

@@ -12,5 +12,13 @@ export default defineConfig({
   server: {
     port: 3000,
     open: false
+  },
+  build: {
+    // Optimize chunk splitting for faster loading
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   }
 })

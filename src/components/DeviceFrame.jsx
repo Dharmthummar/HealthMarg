@@ -31,7 +31,7 @@ export default function DeviceFrame({ children, viewMode, setViewMode }) {
   // If opened directly on a REAL MOBILE PHONE or if fullscreen mode is toggled
   if (isMobileViewport || viewMode === 'fullscreen') {
     return (
-      <div className="w-full min-h-screen bg-slate-50 text-slate-900 font-sans relative overflow-x-hidden flex flex-col">
+      <div className="w-full min-h-dvh bg-slate-50 text-slate-900 font-sans relative overflow-x-hidden flex flex-col">
         {/* On desktop fullscreen view, provide a floating frame toggle button */}
         {!isMobileViewport && (
           <div className="fixed top-3 right-3 z-50 flex items-center gap-2 bg-white/90 backdrop-blur-md border border-white/80 px-3 py-1.5 rounded-full shadow-lg">
@@ -46,7 +46,7 @@ export default function DeviceFrame({ children, viewMode, setViewMode }) {
         )}
 
         {/* Native Mobile Content Viewport */}
-        <div className="w-full min-h-screen max-w-md mx-auto bg-slate-50 relative flex flex-col shadow-none sm:shadow-lg">
+        <div className="w-full min-h-dvh max-w-md mx-auto bg-slate-50 relative flex flex-col shadow-none sm:shadow-lg">
           {children}
         </div>
       </div>

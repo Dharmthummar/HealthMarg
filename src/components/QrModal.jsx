@@ -6,7 +6,7 @@ export default function QrModal({ isOpen, onClose, journeyData }) {
   if (!isOpen || !journeyData) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
+    <div className="fixed inset-0 z-[55] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
       <div className="bg-slate-900 border border-slate-800 text-slate-100 rounded-3xl p-6 w-full max-w-sm shadow-2xl space-y-5 text-center relative overflow-hidden">
         
         {/* Background glow */}
