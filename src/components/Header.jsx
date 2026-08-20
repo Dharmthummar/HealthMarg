@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, PhoneCall, ChevronDown, ArrowLeft } from 'lucide-react';
 import { ORIGIN_CITIES, DESTINATION_HUBS } from '../data/mockData';
-import LogoSvg from './LogoSvg';
 
 export default function Header({ activeTab, setActiveTab, selectedCity, setSelectedCity, onShowEmergencyModal }) {
   const [showLocationPicker, setShowLocationPicker] = useState(false);
@@ -10,10 +9,10 @@ export default function Header({ activeTab, setActiveTab, selectedCity, setSelec
   const currentHubObj = DESTINATION_HUBS.find(h => h.id === currentCityObj.hub) || DESTINATION_HUBS[0];
 
   return (
-    <header className="liquid-glass-header text-slate-900 px-4 py-3 sticky top-0 z-30 shadow-xs">
+    <header className="liquid-glass-header text-slate-900 px-4 py-2.5 sticky top-0 z-30 shadow-xs">
       <div className="flex items-center justify-between gap-2">
         
-        {/* Left: Brand Identity or Back Button */}
+        {/* Left: Brand Identity with Graphic LOGO.png Image */}
         {activeTab !== 'home' ? (
           <button
             onClick={() => setActiveTab('home')}
@@ -27,13 +26,16 @@ export default function Header({ activeTab, setActiveTab, selectedCity, setSelec
             className="flex items-center gap-2 cursor-pointer group" 
             onClick={() => setActiveTab('home')}
           >
-            <div className="transition-transform group-hover:scale-105">
-              <LogoSvg width={34} height={34} showText={false} />
-            </div>
+            {/* Exact graphic logo image icon */}
+            <img 
+              src="/LOGO.png" 
+              alt="HealthMarg Logo" 
+              className="w-8 h-8 object-contain drop-shadow-xs transition-transform group-hover:scale-105 shrink-0" 
+            />
             <div className="flex flex-col leading-none">
               <div className="flex items-center">
-                <span className="font-extrabold text-lg text-[#072D4B] font-jakarta tracking-tight">Health</span>
-                <span className="font-extrabold text-lg text-emerald-600 font-jakarta tracking-tight">Marg</span>
+                <span className="font-extrabold text-base text-[#072D4B] font-jakarta tracking-tight">Health</span>
+                <span className="font-extrabold text-base text-emerald-600 font-jakarta tracking-tight">Marg</span>
               </div>
               <span className="text-[9px] text-slate-500 font-medium tracking-wide">Heartland Care Loop</span>
             </div>
@@ -43,7 +45,7 @@ export default function Header({ activeTab, setActiveTab, selectedCity, setSelec
         {/* Center: Heartland Location Picker Badge */}
         <button
           onClick={() => setShowLocationPicker(true)}
-          className="flex items-center gap-1.5 bg-white/80 hover:bg-white border border-white/90 px-3 py-1.5 rounded-full text-xs shadow-xs transition max-w-[160px] active:scale-95"
+          className="flex items-center gap-1.5 bg-white/80 hover:bg-white border border-white/90 px-3 py-1.5 rounded-full text-xs shadow-xs transition max-w-[155px] active:scale-95"
         >
           <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
           <div className="truncate text-left leading-tight">
