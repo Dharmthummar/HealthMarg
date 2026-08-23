@@ -11,10 +11,10 @@ export default function Home({ onNavigate, onSelectHospital, currentUser }) {
   const services = [
     { id: 'beds',      title: 'Hospital Beds',   sub: 'Live ICU & Ward',     icon: Bed,        image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=400&q=75', tint: 'from-emerald-900/80' },
     { id: 'lodging',   title: 'Family Lodges',   sub: 'From \u20B9300/night',     icon: Hotel,      image: 'https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=400&q=75', tint: 'from-amber-900/80' },
-    { id: 'labs',      title: 'Diagnostics',     sub: 'CT, MRI, Blood',      icon: Microscope, image: '/assets/products/mri_scanner.jpg', tint: 'from-sky-900/80' },
-    { id: 'equipment', title: 'Rentals',          sub: 'Nebulizer, BiPAP, O2', icon: Truck,     image: '/assets/products/nebulizer.jpg', tint: 'from-indigo-900/80' },
+    { id: 'labs',      title: 'Diagnostics',     sub: 'CT, MRI, Blood',      icon: Microscope, image: './assets/products/mri_scanner.jpg', tint: 'from-sky-900/80' },
+    { id: 'equipment', title: 'Rentals',          sub: 'Nebulizer, BiPAP, O2', icon: Truck,     image: './assets/products/nebulizer.jpg', tint: 'from-indigo-900/80' },
     { id: 'support',   title: '0% EMI',           sub: 'Medical Loans',      icon: Wallet,     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&q=75', tint: 'from-teal-900/80' },
-    { id: 'journey',   title: 'Referral Pass',    sub: 'QR Gate Check-In',   icon: QrCode,     image: '/assets/products/echo_ultrasound.jpg', tint: 'from-rose-900/80' }
+    { id: 'journey',   title: 'Referral Pass',    sub: 'QR Gate Check-In',   icon: QrCode,     image: './assets/products/echo_ultrasound.jpg', tint: 'from-rose-900/80' }
   ];
 
   const totalVacant = hosp.bedCategories.reduce((s, b) => s + b.vacant, 0);

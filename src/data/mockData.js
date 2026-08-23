@@ -75,7 +75,7 @@ export const HOSPITALS = [
       { id: "suite",    type: "Suite",            price: 8900, vacant: 1,
         image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=75" },
       { id: "icu",      type: "ICU / Ventilator", price: 7200, vacant: 5,
-        image: "/assets/products/icu_bed.jpg" }
+        image: "./assets/products/icu_bed.jpg" }
     ],
     facilities: {
       ctScan:    { label: "CT Scan",            value: "Yes", detail: "128-Slice High-Speed CT" },
@@ -103,7 +103,7 @@ export const DIAGNOSTIC_TESTS = [
     discountCost: 17500,
     reportTime: "Same Day (6 hrs)",
     fastingRequired: "6 hrs fasting before scan",
-    image: "/assets/products/petct_scanner.jpg"
+    image: "./assets/products/petct_scanner.jpg"
   },
   {
     id: "dt-mri",
@@ -114,7 +114,7 @@ export const DIAGNOSTIC_TESTS = [
     discountCost: 6200,
     reportTime: "4-6 hours",
     fastingRequired: "No fasting needed",
-    image: "/assets/products/mri_scanner.jpg"
+    image: "./assets/products/mri_scanner.jpg"
   },
   {
     id: "dt-ct",
@@ -125,7 +125,7 @@ export const DIAGNOSTIC_TESTS = [
     discountCost: 3800,
     reportTime: "2-3 hours",
     fastingRequired: "4 hrs fasting for contrast",
-    image: "/assets/products/ct_scanner.jpg"
+    image: "./assets/products/ct_scanner.jpg"
   },
   {
     id: "dt-echo",
@@ -136,7 +136,7 @@ export const DIAGNOSTIC_TESTS = [
     discountCost: 2400,
     reportTime: "Instant (1 hr)",
     fastingRequired: "No fasting needed",
-    image: "/assets/products/echo_ultrasound.jpg"
+    image: "./assets/products/echo_ultrasound.jpg"
   },
   {
     id: "dt-path",
@@ -147,7 +147,7 @@ export const DIAGNOSTIC_TESTS = [
     discountCost: 1650,
     reportTime: "12-24 hours",
     fastingRequired: "10-12 hrs fasting",
-    image: "/assets/products/blood_tubes.jpg"
+    image: "./assets/products/blood_tubes.jpg"
   }
 ];
 
@@ -164,7 +164,7 @@ export const MEDICAL_EQUIPMENT = [
     deposit: 1000,
     deliveryTime: "Within 2 hours",
     rating: 4.9,
-    image: "/assets/products/nebulizer.jpg"
+    image: "./assets/products/nebulizer.jpg"
   },
   {
     id: "eq-bipap",
@@ -177,7 +177,7 @@ export const MEDICAL_EQUIPMENT = [
     deposit: 5000,
     deliveryTime: "Within 3 hours",
     rating: 4.8,
-    image: "/assets/products/bipap.jpg"
+    image: "./assets/products/bipap.jpg"
   },
   {
     id: "eq-o2",
@@ -190,7 +190,7 @@ export const MEDICAL_EQUIPMENT = [
     deposit: 8000,
     deliveryTime: "Within 3 hours",
     rating: 4.9,
-    image: "/assets/products/oxygen_concentrator.jpg"
+    image: "./assets/products/oxygen_concentrator.jpg"
   },
   {
     id: "eq-icubed",
@@ -203,7 +203,7 @@ export const MEDICAL_EQUIPMENT = [
     deposit: 15000,
     deliveryTime: "Within 5 hours",
     rating: 4.7,
-    image: "/assets/products/icu_bed.jpg"
+    image: "./assets/products/icu_bed.jpg"
   },
   {
     id: "eq-wheelchair",
@@ -216,7 +216,7 @@ export const MEDICAL_EQUIPMENT = [
     deposit: 6000,
     deliveryTime: "Same Day",
     rating: 4.6,
-    image: "/assets/products/wheelchair.jpg"
+    image: "./assets/products/wheelchair.jpg"
   }
 ];
 
