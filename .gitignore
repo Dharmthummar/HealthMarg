@@ -7,6 +7,16 @@ dist
 dist-ssr
 *.local
 
+# Environment & Secrets
+.env
+.env.*.local
+client_secret_*.json
+
+# Scratch scripts
+fix_*.py
+build_mock.py
+specs.json
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

@@ -1,415 +1,270 @@
-// HealthMarg Mock Data & Startup Intelligence
+// HealthMarg Sourced Data - Hospital name from Hospital Details_Ahmedabad.xlsx
+// CIN: U62011GJ2025PTC164160 | WellViva HealthTech India Pvt. Ltd.
 
 export const PITCH_DATA = {
   company: "HealthMarg",
   parentCompany: "WellViva HealthTech India Pvt. Ltd.",
   cin: "U62011GJ2025PTC164160",
-  tagline: "Connecting India’s Heartland to Urban Healthcare",
+  tagline: "Connecting India's Heartland to Urban Healthcare",
   contact: {
     founder: "Naresh Tawde",
     phone: "+91 9820462984 / +91 9537995556",
-    email: "info@healthmarg.in",
-    gmail: "healthmarg.wellviva@gmail.com"
-  },
-  problem: [
-    "Millions in Tier II/III/IV cities lack access to advanced tertiary care (Oncology, Cardiac Surgeries, Neuro).",
-    "No real-time hospital bed availability status or transparent referral system.",
-    "Over 50% of tertiary care patients in Tier I hospitals come from smaller towns.",
-    "Families struggle severely with medical travel, lodging costs, and diagnostic delays."
-  ],
-  solution: [
-    "1st Dedicated Aggregator connecting rural & semi-urban patients directly to Tier I tertiary centers.",
-    "Real-time ICU & Ward Bed live availability booking system.",
-    "Scouting economical lodging, homestays & dormitories for patient families right next to hospitals.",
-    "Medical equipment rentals (BiPAP, O2 Concentrators, ICU Beds) delivered to home.",
-    "End-to-end support system: 0% EMI medical loans, NGO trust aid & patient mental health counselling."
-  ],
-  usp: [
-    "Dedicated Tier II/III/IV → Tier I Referral Aggregator.",
-    "Complete 360° Care Loop: Bed + Diagnostics + Family Stay + Equipment + Finance.",
-    "Zero Pharmacy operations to avoid regulatory friction & keep pure referral focus.",
-    "High social impact with strong unit economics & scalable tech infrastructure."
-  ],
-  revenueStreams: [
-    { title: "Hospital Bed Booking Fee", rate: "₹500 - ₹1,000 per booking", icon: "Bed" },
-    { title: "Pathology Lab Test Fee", rate: "₹10 - ₹100 per test", icon: "Microscope" },
-    { title: "Lodging & Homestay Commission", rate: "5% - 10% commission", icon: "Hotel" },
-    { title: "Medical Equipment Rentals", rate: "₹100 - ₹1,500 rental commission", icon: "Truck" },
-    { title: "Annual Retention Subscriptions", rate: "₹500 - ₹1,000 / year", icon: "Star" }
-  ],
-  marketSize: {
-    tam: "₹45,000 Cr",
-    tamDesc: "Total Available Digital Health Referral & Service Market in India (2026)",
-    sam: "₹8,500 Cr",
-    samDesc: "Serviceable Market in Tier II/III/IV to Tier I Corridors",
-    som: "₹1,200 Cr",
-    somDesc: "Target Obtainable Market by 2030 across 50 Urban Hubs"
-  },
-  gtmStrategy: [
-    "Phase 1 Pilot: Mehsana, Palitana, Konkan region corridors linked to Ahmedabad & Mumbai.",
-    "Channels: ASHA worker referrals, local clinic networks, regional WhatsApp campaign.",
-    "Strategic Partnerships: Urban hospital chains, accredited lab networks, budget lodge associations."
-  ]
+    email: "info@healthmarg.in"
+  }
 };
 
-export const ORIGIN_CITIES = [
-  { id: "mehsana", name: "Mehsana, Gujarat", hub: "ahmedabad", distance: "75 km" },
-  { id: "palitana", name: "Palitana, Gujarat", hub: "ahmedabad", distance: "215 km" },
-  { id: "konkan", name: "Ratnagiri / Konkan, MH", hub: "mumbai", distance: "330 km" },
-  { id: "amreli", name: "Amreli, Gujarat", hub: "ahmedabad", distance: "240 km" },
-  { id: "latur", name: "Latur, Maharashtra", hub: "mumbai", distance: "470 km" },
-  { id: "nanded", name: "Nanded, Maharashtra", hub: "pune", distance: "420 km" }
+// ?? All 53 Specialities from Hospital Details_Ahmedabad.xlsx ??
+export const AHMEDABAD_SPECIALTIES = [
+  "All Specialties","Anaesthesiology","Bariatric Surgery","Blood Bank / Transfusion Medicine",
+  "Cardiac Electrophysiology","Cardiology","Cardiothoracic and Vascular Surgery",
+  "Cranio Maxillo Facial Surgery","Critical Care","Dentistry","Dermatology and Cosmetology",
+  "Diabetology and Endocrinology","Dietetics and Nutrition","Emergency Medicine","ENT",
+  "Family Medicine","General Surgery","Gynaec Oncology","Haematology, Haemato-Oncology, and BMT",
+  "Head and Neck Surgery","Infectious Diseases","Internal Medicine","Interventional Neuroradiology",
+  "Interventional Radiology","Laparoscopy Surgery","Liver and HPB Surgery",
+  "Medical Gastroenterology and Hepatology","Medical Oncology","Microbiology","Nephrology",
+  "Neurology","Neurosurgery","Nuclear Medicine","Obstetrics and Gynaecology","Ophthalmology",
+  "Orthopaedic Surgery","Paediatrics","Pain and Palliative Care","Pathology","Physiotherapy",
+  "Plastic and Reconstructive Surgery","Preventive Oncology","Psychiatry",
+  "Pulmonology / Respiratory Medicine","Radiation Oncology","Radiology","Rheumatology",
+  "Robotic Surgery","Spine Surgery","Surgical Gastroenterology / GI Surgery",
+  "Surgical Oncology","Thoracic Surgery","Urology","Vascular Surgery"
 ];
 
-export const DESTINATION_HUBS = [
-  { id: "ahmedabad", name: "Ahmedabad (Tier I Center)", state: "Gujarat" },
-  { id: "mumbai", name: "Mumbai (Tier I Center)", state: "Maharashtra" },
-  { id: "pune", name: "Pune (Tier I Center)", state: "Maharashtra" }
-];
-
+// ?? Hospital Data ? Name exactly as in Hospital Details_Ahmedabad.xlsx ??
 export const HOSPITALS = [
   {
-    id: "hosp-apollo-ahmedabad",
-    name: "Apollo Hospitals",
-    location: "Bhat, GIDC, Ahmedabad",
-    cityHub: "ahmedabad",
-    rating: 4.9,
-    reviews: 1280,
-    accreditation: "JCI & NABH Accredited",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80",
-    specialties: ["Cardiology", "Oncology", "Nephrology", "Organ Transplants"],
-    totalBeds: 350,
-    vacantBeds: 14,
-    icuVacant: 4,
-    ventilatorsVacant: 3,
-    deluxeVacant: 7,
-    generalVacant: 3,
-    bedPrices: {
-      general: 1200,
-      semiPrivate: 3500,
-      private: 5500,
-      icu: 7500
+    id: "hosp-sterling-ahmedabad",
+    name: "Sterling Hospitals",
+    location: "Memnagar, Ahmedabad",
+    lat: 23.0588, lng: 72.5520,
+    contactNo: "9898987878",
+    detailAddress: "Sterling Hospital, Sterling Hospital Road, Memnagar, Ahmedabad-380052, Gujarat, India",
+    accreditation: "NABH & NABL Multi-Specialty Tertiary Care",
+    rating: 4.9, reviews: 1840,
+    // Modern hospital exterior architecture (No humans)
+    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=900&q=80",
+    specialties: [
+      "Anaesthesiology","Bariatric Surgery","Blood Bank / Transfusion Medicine",
+      "Cardiac Electrophysiology","Cardiology","Cardiothoracic and Vascular Surgery",
+      "Cranio Maxillo Facial Surgery","Critical Care","Dentistry","Dermatology and Cosmetology",
+      "Diabetology and Endocrinology","Dietetics and Nutrition","Emergency Medicine","ENT",
+      "Family Medicine","General Surgery","Gynaec Oncology","Haematology, Haemato-Oncology, and BMT",
+      "Head and Neck Surgery","Infectious Diseases","Internal Medicine","Interventional Neuroradiology",
+      "Interventional Radiology","Laparoscopy Surgery","Liver and HPB Surgery",
+      "Medical Gastroenterology and Hepatology","Medical Oncology","Microbiology","Nephrology",
+      "Neurology","Neurosurgery","Nuclear Medicine","Obstetrics and Gynaecology","Ophthalmology",
+      "Orthopaedic Surgery","Paediatrics","Pain and Palliative Care","Pathology","Physiotherapy",
+      "Plastic and Reconstructive Surgery","Preventive Oncology","Psychiatry",
+      "Pulmonology / Respiratory Medicine","Radiation Oncology","Radiology","Rheumatology",
+      "Robotic Surgery","Spine Surgery","Surgical Gastroenterology / GI Surgery",
+      "Surgical Oncology","Thoracic Surgery","Urology","Vascular Surgery"
+    ],
+    // Pure hospital room / bed architecture shots (Strictly empty, no patients or humans)
+    bedCategories: [
+      { id: "general",  type: "General Ward",     price: 1200, vacant: 7,
+        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=75" },
+      { id: "triple",   type: "Triple Sharing",   price: 2100, vacant: 3,
+        image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=600&q=75" },
+      { id: "twin",     type: "Twin Sharing",     price: 2600, vacant: 4,
+        image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=75" },
+      { id: "single",   type: "Single Private",   price: 4500, vacant: 2,
+        image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=75" },
+      { id: "delux",    type: "Deluxe Room",      price: 6200, vacant: 4,
+        image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=75" },
+      { id: "suite",    type: "Suite",            price: 8900, vacant: 1,
+        image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=75" },
+      { id: "icu",      type: "ICU / Ventilator", price: 7200, vacant: 5,
+        image: "/assets/products/icu_bed.jpg" }
+    ],
+    facilities: {
+      ctScan:    { label: "CT Scan",            value: "Yes", detail: "128-Slice High-Speed CT" },
+      mri:       { label: "MRI",                value: "Yes", detail: "3T Silent Advanced MRI" },
+      pathLab:   { label: "Path Lab",           value: "Yes", detail: "NABL Certified Pathology" },
+      mediclaim: { label: "Cashless Mediclaim", value: "Yes", detail: "100% Cashless TPA Desk" },
+      cathLab:   { label: "Cath Lab",           value: "Yes", detail: "Flat Panel Cardiac Cath Lab" },
+      ot:        { label: "OT",                 value: "Yes", detail: "Modular Ultra-Clean OT Suites" },
+      bloodBank: { label: "Blood Bank",         value: "Yes", detail: "24/7 Transfusion Blood Bank" }
     },
-    facilities: [
-      "128-Slice CT Scan",
-      "3T Silent MRI",
-      "Emergency Cardiac Cath Lab",
-      "24/7 NABL Blood Bank",
-      "Organ Transplant Suite",
-      "In-house Chemotherapy Daycare"
-    ],
-    doctors: [
-      { name: "Dr. Rajesh Shah", spec: "Senior Cardiac Surgeon", exp: "22 Yrs Exp", opdTime: "10:00 AM - 02:00 PM" },
-      { name: "Dr. Ananya Mehta", spec: "Radiation Oncologist", exp: "16 Yrs Exp", opdTime: "02:30 PM - 06:00 PM" },
-      { name: "Dr. Sameer Parikh", spec: "Chief Nephrologist", exp: "19 Yrs Exp", opdTime: "11:00 AM - 04:00 PM" }
-    ],
-    nearbyLodgesCount: 12,
-    bookingFee: 500
-  },
-  {
-    id: "hosp-hcg-ahmedabad",
-    name: "HCG Cancer Centre",
-    location: "Sola, SG Highway, Ahmedabad",
-    cityHub: "ahmedabad",
-    rating: 4.8,
-    reviews: 940,
-    accreditation: "NABH Cancer Specialty Center",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
-    specialties: ["Surgical Oncology", "Radiation Therapy", "Bone Marrow Transplant"],
-    totalBeds: 220,
-    vacantBeds: 8,
-    icuVacant: 2,
-    ventilatorsVacant: 2,
-    deluxeVacant: 3,
-    generalVacant: 3,
-    bedPrices: {
-      general: 1500,
-      semiPrivate: 4000,
-      private: 6000,
-      icu: 8500
-    },
-    facilities: [
-      "TrueBeam LINAC Radiation",
-      "PET-CT Scanner",
-      "Molecular Onco-Pathology",
-      "Bone Marrow Unit",
-      "24/7 ICU Isolation"
-    ],
-    doctors: [
-      { name: "Dr. Vikram Desai", spec: "Onco Surgeon", exp: "24 Yrs Exp", opdTime: "09:00 AM - 01:00 PM" },
-      { name: "Dr. Neha Patel", spec: "Medical Oncologist", exp: "14 Yrs Exp", opdTime: "02:00 PM - 05:30 PM" }
-    ],
-    nearbyLodgesCount: 8,
-    bookingFee: 500
-  },
-  {
-    id: "hosp-fortis-mumbai",
-    name: "Fortis Hospital Mulund",
-    location: "Goregaon East, Mumbai",
-    cityHub: "mumbai",
-    rating: 4.9,
-    reviews: 2150,
-    accreditation: "JCI & NABH Accredited",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
-    specialties: ["Heart Transplants", "Neuro Surgery", "Pediatric Cardiac"],
-    totalBeds: 400,
-    vacantBeds: 11,
-    icuVacant: 3,
-    ventilatorsVacant: 4,
-    deluxeVacant: 2,
-    generalVacant: 2,
-    bedPrices: {
-      general: 1800,
-      semiPrivate: 4500,
-      private: 7500,
-      icu: 9200
-    },
-    facilities: [
-      "Advanced Heart Failure Unit",
-      "Robotic Surgical System",
-      "3T MRI",
-      "Level IV Trauma Center",
-      "Air Ambulance Helipad"
-    ],
-    doctors: [
-      { name: "Dr. Anvay Mulay", spec: "Chief Cardiac Transplant Surgeon", exp: "28 Yrs Exp", opdTime: "10:00 AM - 03:00 PM" },
-      { name: "Dr. Smriti Rastogi", spec: "Neuro Specialist", exp: "18 Yrs Exp", opdTime: "01:00 PM - 05:00 PM" }
-    ],
-    nearbyLodgesCount: 15,
-    bookingFee: 750
-  },
-  {
-    id: "hosp-cims-ahmedabad",
-    name: "Marengo CIMS Hospital",
-    location: "Off Science City Road, Ahmedabad",
-    cityHub: "ahmedabad",
-    rating: 4.8,
-    reviews: 1420,
-    accreditation: "NABH Multi-Specialty",
-    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80",
-    specialties: ["Pulmonology", "Critical Care ICU", "Gastroenterology"],
-    totalBeds: 300,
-    vacantBeds: 18,
-    icuVacant: 5,
-    ventilatorsVacant: 3,
-    deluxeVacant: 6,
-    generalVacant: 4,
-    bedPrices: {
-      general: 1400,
-      semiPrivate: 3800,
-      private: 5800,
-      icu: 7800
-    },
-    facilities: [
-      "ECMO & Advanced Ventilator Support",
-      "24/7 Stroke Response Team",
-      "Gastro Endoscopy Suite",
-      "Dialysis Center"
-    ],
-    doctors: [
-      { name: "Dr. Keyur Parikh", spec: "Senior Interventional Cardiologist", exp: "26 Yrs Exp", opdTime: "10:30 AM - 02:30 PM" },
-      { name: "Dr. Bhagyesh Shah", spec: "Critical Care Lead", exp: "17 Yrs Exp", opdTime: "09:00 AM - 05:00 PM" }
-    ],
-    nearbyLodgesCount: 10,
+    get vacantBeds() { return this.bedCategories.reduce((s, b) => s + b.vacant, 0); },
+    get icuVacant()  { return this.bedCategories.find(b => b.id === 'icu')?.vacant ?? 0; },
     bookingFee: 500
   }
 ];
 
+// ?? DIAGNOSTIC TESTS (Pure product / machine photos, strictly NO humans) ??
 export const DIAGNOSTIC_TESTS = [
   {
-    id: "test-petct",
-    name: "Whole Body PET-CT Scan",
-    category: "Oncology & Imaging",
-    cost: 14500,
-    discountCost: 12800,
-    fastingRequired: "6 Hours Fasting Required",
-    reportTime: "6 Hours Express Digital Report",
-    accreditedLabs: ["HealthMarg Central Onco Lab", "Apollo Diagnostics"],
-    description: "Detects active metabolic tumors & cancer metastasis with high precision."
+    id: "dt-petct",
+    name: "PET-CT Whole Body Scan",
+    category: "Nuclear Imaging",
+    description: "Full-body oncology PET-CT scanner machine for cancer detection, staging & treatment monitoring.",
+    cost: 22000,
+    discountCost: 17500,
+    reportTime: "Same Day (6 hrs)",
+    fastingRequired: "6 hrs fasting before scan",
+    image: "/assets/products/petct_scanner.jpg"
   },
   {
-    id: "test-mri-brain",
-    name: "3T Brain MRI with Contrast",
-    category: "Neurology",
-    cost: 6500,
-    discountCost: 5200,
-    fastingRequired: "No Fasting Needed",
-    reportTime: "4 Hours Digital Delivery",
-    accreditedLabs: ["HealthMarg Imaging Hub", "CIMS Advanced Radiology"],
-    description: "High resolution scan for stroke, aneurysm, brain lesions & neurological assessment."
+    id: "dt-mri",
+    name: "3T Brain & Spine MRI",
+    category: "Radiology",
+    description: "High-field 3 Tesla silent MRI scanner bore for neuro, spine, joints & soft tissue imaging.",
+    cost: 8500,
+    discountCost: 6200,
+    reportTime: "4-6 hours",
+    fastingRequired: "No fasting needed",
+    image: "/assets/products/mri_scanner.jpg"
   },
   {
-    id: "test-ct-chest",
-    name: "High Resolution Chest CT (HRCT)",
-    category: "Pulmonology",
-    cost: 3200,
+    id: "dt-ct",
+    name: "128-Slice CT Scan (Chest/Abdomen)",
+    category: "CT Imaging",
+    description: "128-Slice high-speed CT tomography scanner machine for trauma, angiogram, chest & abdomen.",
+    cost: 5000,
+    discountCost: 3800,
+    reportTime: "2-3 hours",
+    fastingRequired: "4 hrs fasting for contrast",
+    image: "/assets/products/ct_scanner.jpg"
+  },
+  {
+    id: "dt-echo",
+    name: "2D Echo + Doppler Cardiology",
+    category: "Cardiac Diagnostics",
+    description: "Cardiac ultrasound system cart with multi-frequency probes for heart valve & ejection fraction analysis.",
+    cost: 3500,
     discountCost: 2400,
-    fastingRequired: "No Fasting Needed",
-    reportTime: "3 Hours Digital Delivery",
-    accreditedLabs: ["HealthMarg Diagnostics", "Metro Scan Center"],
-    description: "Evaluates lung infection, fibrosis, nodule evaluation & airway disease."
+    reportTime: "Instant (1 hr)",
+    fastingRequired: "No fasting needed",
+    image: "/assets/products/echo_ultrasound.jpg"
   },
   {
-    id: "test-cardiac-panel",
-    name: "Advanced Cardiac Risk & Biomarker Panel",
-    category: "Cardiology",
-    cost: 1800,
-    discountCost: 1199,
-    fastingRequired: "10 Hours Fasting",
-    reportTime: "Same Day Evening",
-    accreditedLabs: ["HealthMarg PathLab", "Metropolis Partner Lab"],
-    description: "Includes Lipid Profile, Troponin-I, hs-CRP, HbA1c & Kidney Function."
-  },
-  {
-    id: "test-cbc-routine",
-    name: "Complete Blood Count (CBC) + ESR",
-    category: "General Pathology",
-    cost: 350,
-    discountCost: 250,
-    fastingRequired: "No Fasting Required",
-    reportTime: "2 Hours Express",
-    accreditedLabs: ["All Partner Labs"],
-    description: "Standard screening for infection, anemia, hemoglobin & platelet counts."
+    id: "dt-path",
+    name: "Comprehensive Blood Pathology Panel",
+    category: "Pathology",
+    description: "CBC, Liver (LFT), Kidney (KFT), Lipid, Thyroid, HbA1c & Vitamin D/B12 lab analyzer test panel.",
+    cost: 2800,
+    discountCost: 1650,
+    reportTime: "12-24 hours",
+    fastingRequired: "10-12 hrs fasting",
+    image: "/assets/products/blood_tubes.jpg"
   }
 ];
 
+// ?? MEDICAL EQUIPMENT RENTALS (Pure Dealer Product Shots, Strictly NO humans) ??
 export const MEDICAL_EQUIPMENT = [
   {
+    id: "eq-nebulizer",
+    name: "Compressor Mesh Nebulizer Machine",
+    category: "Respiratory & Asthma Care",
+    dealer: "Omron Healthcare Authorized Dealer",
+    specs: "Heavy-duty compressor nebulizer with adult & pediatric masks, medicine cup & vapor mist tube. For asthma, bronchitis, COPD & cough relief.",
+    rentalPerDay: 80,
+    rentalPerMonth: 1200,
+    deposit: 1000,
+    deliveryTime: "Within 2 hours",
+    rating: 4.9,
+    image: "/assets/products/nebulizer.jpg"
+  },
+  {
     id: "eq-bipap",
-    name: "Philips Respironics BiPAP Auto",
-    category: "Respiratory & ICU Support",
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
+    name: "BiPAP Machine (Auto-CPAP & Humidifier)",
+    category: "Non-Invasive Ventilation",
+    dealer: "ResMed Medical Solutions",
+    specs: "ResMed AirCurve 10 Auto-BiPAP with heated humidifier, full face mask & climate tubing. For sleep apnea, COPD & post-extubation support.",
     rentalPerDay: 350,
-    rentalPerMonth: 8500,
-    outrightBuy: 75000,
-    deposit: 3000,
-    deliveryTime: "Under 3 Hours",
-    specs: "Dual pressure therapy (IPAP/EPAP), integrated humidifier, leak compensation & digital compliance tracking.",
-    includesTechnician: true,
-    rating: 4.9
+    rentalPerMonth: 7500,
+    deposit: 5000,
+    deliveryTime: "Within 3 hours",
+    rating: 4.8,
+    image: "/assets/products/bipap.jpg"
   },
   {
-    id: "eq-oxygen",
-    name: "10-Liter Dual Flow Medical Oxygen Concentrator",
-    category: "Oxygen & Respiratory",
-    image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=600&q=80",
+    id: "eq-o2",
+    name: "10L Medical Oxygen Concentrator",
+    category: "Oxygen Therapy",
+    dealer: "Philips Respironics Authorized",
+    specs: "Philips EverFlo 10 Litre/min medical oxygen concentrator with continuous 93% ? 3% purity. Dual output with oxygen tubing & nasal cannula.",
     rentalPerDay: 450,
-    rentalPerMonth: 9500,
-    outrightBuy: 62000,
-    deposit: 3500,
-    deliveryTime: "Under 2 Hours (Urgent Triage)",
-    specs: "93% ± 3% purity continuous flow oxygen, power outage alarm, oxygen purity analyzer built-in.",
-    includesTechnician: true,
-    rating: 4.9
+    rentalPerMonth: 9000,
+    deposit: 8000,
+    deliveryTime: "Within 3 hours",
+    rating: 4.9,
+    image: "/assets/products/oxygen_concentrator.jpg"
   },
   {
-    id: "eq-icu-bed",
-    name: "5-Function Motorized Electric ICU Bed + Air Mattress",
-    category: "Patient Mobility & Bedcare",
-    image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=600&q=80",
-    rentalPerDay: 550,
-    rentalPerMonth: 12000,
-    outrightBuy: 88000,
-    deposit: 4000,
-    deliveryTime: "Same Day Setup",
-    specs: "Remote control head & foot tilt, height adjustment, Trendelenburg position & anti-bedsore ripple air mattress.",
-    includesTechnician: true,
-    rating: 4.8
+    id: "eq-icubed",
+    name: "5-Function Motorized Hospital ICU Bed",
+    category: "Hospital Beds",
+    dealer: "Paramount Bed Dealer Hub",
+    specs: "Full motorized 5-function electric bed with remote, Trendelenburg tilt, ABS side rails, high-density waterproof mattress & IV stand.",
+    rentalPerDay: 800,
+    rentalPerMonth: 14000,
+    deposit: 15000,
+    deliveryTime: "Within 5 hours",
+    rating: 4.7,
+    image: "/assets/products/icu_bed.jpg"
   },
   {
     id: "eq-wheelchair",
-    name: "Foldable Lightweight Transit Wheelchair",
-    category: "Patient Mobility",
-    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=600&q=80",
-    rentalPerDay: 80,
-    rentalPerMonth: 1800,
-    outrightBuy: 9500,
-    deposit: 1000,
-    deliveryTime: "Under 4 Hours",
-    specs: "Ultra light aluminum frame, companion handbrakes, cushion seat, compact fold for car trunk.",
-    includesTechnician: false,
-    rating: 4.7
+    name: "Foldable Motorized Mobility Wheelchair",
+    category: "Mobility Aid",
+    dealer: "Karma Mobility India",
+    specs: "Lightweight foldable wheelchair with 360? joystick controller, electromagnetic brake, anti-tip rear wheels & padded seat cushion.",
+    rentalPerDay: 250,
+    rentalPerMonth: 4500,
+    deposit: 6000,
+    deliveryTime: "Same Day",
+    rating: 4.6,
+    image: "/assets/products/wheelchair.jpg"
   }
 ];
 
+// ?? FAMILY LODGINGS near Sterling Hospitals, Memnagar (Empty room photos, NO humans) ??
 export const FAMILY_LODGINGS = [
   {
-    id: "lodge-seva-sadan",
-    name: "Seva Sadan Medical Lodge & Homestay",
-    nearHospital: "Apollo Hospitals & HCG Cancer Centre (200m distance)",
-    hospitalId: "hosp-apollo-ahmedabad",
-    rating: 4.8,
-    reviews: 320,
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
-    types: [
-      { name: "Clean Dormitory Bed", pricePerNight: 350, icon: "Users" },
-      { name: "Private Double AC Room", pricePerNight: 750, icon: "Home" },
-      { name: "Family Suite with Kitchenette", pricePerNight: 1100, icon: "Heart" }
-    ],
-    amenities: [
-      "Shared Kitchen for Patient Special Meals",
-      "24/7 Hot Water & Elevator",
-      "Free Electric Hospital Shuttle",
-      "Clean RO Drinking Water",
-      "Washing Machine & Laundry Area"
-    ],
-    distance: "200 meters (3 min walk to Apollo)"
-  },
-  {
-    id: "lodge-wellviva-stays",
-    name: "WellViva Care Homestays",
-    nearHospital: "HCG Cancer Centre & CIMS Hospital",
-    hospitalId: "hosp-hcg-ahmedabad",
-    rating: 4.9,
-    reviews: 185,
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80",
-    types: [
-      { name: "Budget Patient AC Room", pricePerNight: 850, icon: "Home" },
-      { name: "2-Bedroom Patient Family Apartment", pricePerNight: 1450, icon: "Users" }
-    ],
-    amenities: [
-      "Private Kitchenette & Fridge",
-      "Quiet Environment for Caregivers",
-      "Doctor on Call",
-      "Wheelchair Accessible Ramp"
-    ],
-    distance: "350 meters"
-  },
-  {
-    id: "lodge-atithi-bhavan",
-    name: "Heartland Atithi Care Lodge",
-    nearHospital: "Fortis Hospital Mulund, Mumbai",
-    hospitalId: "hosp-fortis-mumbai",
+    id: "lodge-seva-care",
+    name: "Sterling Seva Care Homestay",
+    nearHospital: "Sterling Hospitals, Memnagar",
+    distance: "3 min walk (210m)",
     rating: 4.7,
-    reviews: 410,
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=800&q=80",
+    amenities: ["Pure Veg Tiffin", "Hot Water", "24/7 Security", "Hospital Shuttle", "Laundry"],
     types: [
-      { name: "Single Caregiver Dorm", pricePerNight: 450, icon: "User" },
-      { name: "Standard Family Room", pricePerNight: 950, icon: "Home" }
-    ],
-    amenities: [
-      "Pure Veg Meal Tiffin Facility",
-      "24/7 Security",
-      "Free High-speed Wi-Fi",
-      "Proximity to Chemist & ATM"
-    ],
-    distance: "400 meters"
+      { name: "Dormitory Bed (6-sharing)", pricePerNight: 300 },
+      { name: "Triple Sharing Room",       pricePerNight: 550 },
+      { name: "Twin Sharing Room",         pricePerNight: 750 },
+      { name: "Private AC Room",           pricePerNight: 1100 }
+    ]
+  },
+  {
+    id: "lodge-memnagar-dharamshala",
+    name: "Memnagar Dharamshala",
+    nearHospital: "Sterling Hospitals, Memnagar",
+    distance: "7 min walk (500m)",
+    rating: 4.3,
+    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
+    amenities: ["Free Meals for Patients", "Temple", "Clean Bathrooms", "Parking"],
+    types: [
+      { name: "Free Bed (for BPL families)", pricePerNight: 0 },
+      { name: "Donation-Based Room",         pricePerNight: 200 },
+      { name: "Basic AC Room",               pricePerNight: 600 }
+    ]
   }
 ];
 
+// ?? REFERRAL PASS ??
 export const INITIAL_CARE_JOURNEY = {
-  journeyId: "HM-2026-8941",
-  patientName: "Rameshwar Patel",
-  age: 58,
-  origin: "Mehsana, Gujarat",
-  destinationHub: "Ahmedabad Tier-1 Medical Corridor",
-  status: "In Transit & Reserved",
+  journeyId: "HM-2025-0047",
+  qrPassCode: "HM-0047-AHMD",
+  patientName: "Patient Name",
+  origin: "Your Location",
   steps: [
-    { id: 1, title: "Local Doctor Referral", location: "Mehsana Primary Care", status: "completed", time: "10:15 AM Today" },
-    { id: 2, title: "ICU Bed Booking Confirmed", location: "Apollo Hospital, ICU Bed #304", status: "active", time: "11:30 AM Today" },
-    { id: 3, title: "Family Lodging Hold", location: "Seva Sadan Lodge, Room #104", status: "active", time: "11:35 AM Today" },
-    { id: 4, title: "BiPAP Equipment Assigned", location: "Dispatch En Route to Apollo", status: "pending", time: "Est. 02:00 PM" },
-    { id: 5, title: "Hospital Admission Check-in", location: "Apollo Triage Gate 2", status: "pending", time: "Est. 01:15 PM" }
-  ],
-  qrPassCode: "HM-APOLLO-ICU-304-SEVA104"
+    { id: 1, title: "Referral Initiated",      location: "Local Clinic / ASHA Worker",            time: "10:00", status: "completed" },
+    { id: 2, title: "HealthMarg Pass Issued",  location: "HealthMarg Digital Platform",           time: "10:15", status: "completed" },
+    { id: 3, title: "Bed Hold Confirmed",      location: "Sterling Hospitals, Memnagar, Ahmedabad",time: "10:30", status: "active" },
+    { id: 4, title: "Patient in Transit",      location: "En Route via Ambulance / Train",        time: "13:00", status: "pending" },
+    { id: 5, title: "Gate Check-In",           location: "Sterling Hospitals Triage Gate",        time: "15:45", status: "pending" },
+    { id: 6, title: "Ward / ICU Admission",   location: "Sterling Hospitals, Ahmedabad",         time: "16:00", status: "pending" }
+  ]
 };
