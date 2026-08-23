@@ -34,7 +34,7 @@ export default function Home({ onNavigate, onSelectHospital, currentUser }) {
               <span>Live Bed Availability Active</span>
             </div>
             <h1 className="text-base font-extrabold text-slate-900 font-jakarta tracking-tight">
-              {currentUser?.provider === 'guest' ? 'Welcome to HealthMarg' : `Hi, ${currentUser?.name?.split(' ')[0] || 'there'} ??`}
+              {currentUser?.provider === 'guest' ? 'Welcome to HealthMarg' : `Hi, ${currentUser?.name?.split(' ')[0] || 'there'}`} ??
             </h1>
             <p className="text-[10.5px] text-slate-500 mt-0.5">
               Real-time beds, family stays & diagnostics across Gujarat & Maharashtra.
