@@ -1,5 +1,7 @@
-// HealthMarg Sourced Data - Hospital name from Hospital Details_Ahmedabad.xlsx
+// HealthMarg Sourced Data - Loaded from updated Hospital List_Ahmedabad.xlsx (322 Verified Hospitals)
 // CIN: U62011GJ2025PTC164160 | WellViva HealthTech India Pvt. Ltd.
+
+import AHMEDABAD_HOSPITALS_RAW from './ahmedabad_hospitals.json';
 
 export const PITCH_DATA = {
   company: "HealthMarg",
@@ -13,84 +15,23 @@ export const PITCH_DATA = {
   }
 };
 
-// ?? All 53 Specialities from Hospital Details_Ahmedabad.xlsx ??
+// ?? All Specialties from Hospital List_Ahmedabad.xlsx ??
 export const AHMEDABAD_SPECIALTIES = [
-  "All Specialties","Anaesthesiology","Bariatric Surgery","Blood Bank / Transfusion Medicine",
-  "Cardiac Electrophysiology","Cardiology","Cardiothoracic and Vascular Surgery",
-  "Cranio Maxillo Facial Surgery","Critical Care","Dentistry","Dermatology and Cosmetology",
-  "Diabetology and Endocrinology","Dietetics and Nutrition","Emergency Medicine","ENT",
-  "Family Medicine","General Surgery","Gynaec Oncology","Haematology, Haemato-Oncology, and BMT",
-  "Head and Neck Surgery","Infectious Diseases","Internal Medicine","Interventional Neuroradiology",
-  "Interventional Radiology","Laparoscopy Surgery","Liver and HPB Surgery",
-  "Medical Gastroenterology and Hepatology","Medical Oncology","Microbiology","Nephrology",
-  "Neurology","Neurosurgery","Nuclear Medicine","Obstetrics and Gynaecology","Ophthalmology",
-  "Orthopaedic Surgery","Paediatrics","Pain and Palliative Care","Pathology","Physiotherapy",
-  "Plastic and Reconstructive Surgery","Preventive Oncology","Psychiatry",
-  "Pulmonology / Respiratory Medicine","Radiation Oncology","Radiology","Rheumatology",
-  "Robotic Surgery","Spine Surgery","Surgical Gastroenterology / GI Surgery",
-  "Surgical Oncology","Thoracic Surgery","Urology","Vascular Surgery"
+  "All Specialties",
+  "Multispeciality Tertiary Care",
+  "General & Laparoscopic Surgery",
+  "Orthopaedics & Spine",
+  "Ophthalmology / Eye Care",
+  "Gynaecology & Maternity",
+  "Cardiology & Cardiac Surgery"
 ];
 
-// ?? Hospital Data ? Name exactly as in Hospital Details_Ahmedabad.xlsx ??
-export const HOSPITALS = [
-  {
-    id: "hosp-sterling-ahmedabad",
-    name: "Sterling Hospitals",
-    location: "Memnagar, Ahmedabad",
-    lat: 23.0588, lng: 72.5520,
-    contactNo: "9898987878",
-    detailAddress: "Sterling Hospital, Sterling Hospital Road, Memnagar, Ahmedabad-380052, Gujarat, India",
-    accreditation: "NABH & NABL Multi-Specialty Tertiary Care",
-    rating: 4.9, reviews: 1840,
-    // Modern hospital exterior architecture (No humans)
-    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=900&q=80",
-    specialties: [
-      "Anaesthesiology","Bariatric Surgery","Blood Bank / Transfusion Medicine",
-      "Cardiac Electrophysiology","Cardiology","Cardiothoracic and Vascular Surgery",
-      "Cranio Maxillo Facial Surgery","Critical Care","Dentistry","Dermatology and Cosmetology",
-      "Diabetology and Endocrinology","Dietetics and Nutrition","Emergency Medicine","ENT",
-      "Family Medicine","General Surgery","Gynaec Oncology","Haematology, Haemato-Oncology, and BMT",
-      "Head and Neck Surgery","Infectious Diseases","Internal Medicine","Interventional Neuroradiology",
-      "Interventional Radiology","Laparoscopy Surgery","Liver and HPB Surgery",
-      "Medical Gastroenterology and Hepatology","Medical Oncology","Microbiology","Nephrology",
-      "Neurology","Neurosurgery","Nuclear Medicine","Obstetrics and Gynaecology","Ophthalmology",
-      "Orthopaedic Surgery","Paediatrics","Pain and Palliative Care","Pathology","Physiotherapy",
-      "Plastic and Reconstructive Surgery","Preventive Oncology","Psychiatry",
-      "Pulmonology / Respiratory Medicine","Radiation Oncology","Radiology","Rheumatology",
-      "Robotic Surgery","Spine Surgery","Surgical Gastroenterology / GI Surgery",
-      "Surgical Oncology","Thoracic Surgery","Urology","Vascular Surgery"
-    ],
-    // Pure hospital room / bed architecture shots (Strictly empty, no patients or humans)
-    bedCategories: [
-      { id: "general",  type: "General Ward",     price: 1200, vacant: 7,
-        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=75" },
-      { id: "triple",   type: "Triple Sharing",   price: 2100, vacant: 3,
-        image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=600&q=75" },
-      { id: "twin",     type: "Twin Sharing",     price: 2600, vacant: 4,
-        image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=75" },
-      { id: "single",   type: "Single Private",   price: 4500, vacant: 2,
-        image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=75" },
-      { id: "delux",    type: "Deluxe Room",      price: 6200, vacant: 4,
-        image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=75" },
-      { id: "suite",    type: "Suite",            price: 8900, vacant: 1,
-        image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=75" },
-      { id: "icu",      type: "ICU / Ventilator", price: 7200, vacant: 5,
-        image: "./assets/products/icu_bed.jpg" }
-    ],
-    facilities: {
-      ctScan:    { label: "CT Scan",            value: "Yes", detail: "128-Slice High-Speed CT" },
-      mri:       { label: "MRI",                value: "Yes", detail: "3T Silent Advanced MRI" },
-      pathLab:   { label: "Path Lab",           value: "Yes", detail: "NABL Certified Pathology" },
-      mediclaim: { label: "Cashless Mediclaim", value: "Yes", detail: "100% Cashless TPA Desk" },
-      cathLab:   { label: "Cath Lab",           value: "Yes", detail: "Flat Panel Cardiac Cath Lab" },
-      ot:        { label: "OT",                 value: "Yes", detail: "Modular Ultra-Clean OT Suites" },
-      bloodBank: { label: "Blood Bank",         value: "Yes", detail: "24/7 Transfusion Blood Bank" }
-    },
-    get vacantBeds() { return this.bedCategories.reduce((s, b) => s + b.vacant, 0); },
-    get icuVacant()  { return this.bedCategories.find(b => b.id === 'icu')?.vacant ?? 0; },
-    bookingFee: 500
-  }
-];
+// ?? 322 Verified Hospitals from Hospital List_Ahmedabad.xlsx ??
+export const HOSPITALS = AHMEDABAD_HOSPITALS_RAW.map(h => ({
+  ...h,
+  get vacantBeds() { return this.bedCategories.reduce((s, b) => s + b.vacant, 0); },
+  get icuVacant()  { return this.bedCategories.find(b => b.id === 'icu')?.vacant ?? 0; }
+}));
 
 // ?? DIAGNOSTIC TESTS (Pure product / machine photos, strictly NO humans) ??
 export const DIAGNOSTIC_TESTS = [
@@ -220,12 +161,12 @@ export const MEDICAL_EQUIPMENT = [
   }
 ];
 
-// ?? FAMILY LODGINGS near Sterling Hospitals, Memnagar (Empty room photos, NO humans) ??
+// ?? FAMILY LODGINGS near Ahmedabad Hospital Corridors ??
 export const FAMILY_LODGINGS = [
   {
     id: "lodge-seva-care",
-    name: "Sterling Seva Care Homestay",
-    nearHospital: "Sterling Hospitals, Memnagar",
+    name: "Ahmedabad Care Homestay",
+    nearHospital: "Near Central Hospital Hub, Ahmedabad",
     distance: "3 min walk (210m)",
     rating: 4.7,
     image: "https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=800&q=80",
@@ -239,8 +180,8 @@ export const FAMILY_LODGINGS = [
   },
   {
     id: "lodge-memnagar-dharamshala",
-    name: "Memnagar Dharamshala",
-    nearHospital: "Sterling Hospitals, Memnagar",
+    name: "Ahmedabad Seva Dharamshala",
+    nearHospital: "Opp. Multi-Specialty Hospital Zone",
     distance: "7 min walk (500m)",
     rating: 4.3,
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
@@ -262,9 +203,9 @@ export const INITIAL_CARE_JOURNEY = {
   steps: [
     { id: 1, title: "Referral Initiated",      location: "Local Clinic / ASHA Worker",            time: "10:00", status: "completed" },
     { id: 2, title: "HealthMarg Pass Issued",  location: "HealthMarg Digital Platform",           time: "10:15", status: "completed" },
-    { id: 3, title: "Bed Hold Confirmed",      location: "Sterling Hospitals, Memnagar, Ahmedabad",time: "10:30", status: "active" },
+    { id: 3, title: "Bed Hold Confirmed",      location: "Hospital Triage Desk, Ahmedabad",       time: "10:30", status: "active" },
     { id: 4, title: "Patient in Transit",      location: "En Route via Ambulance / Train",        time: "13:00", status: "pending" },
-    { id: 5, title: "Gate Check-In",           location: "Sterling Hospitals Triage Gate",        time: "15:45", status: "pending" },
-    { id: 6, title: "Ward / ICU Admission",   location: "Sterling Hospitals, Ahmedabad",         time: "16:00", status: "pending" }
+    { id: 5, title: "Gate Check-In",           location: "Hospital Emergency Gate, Ahmedabad",    time: "15:45", status: "pending" },
+    { id: 6, title: "Ward / ICU Admission",   location: "Hospital Ward / ICU",                   time: "16:00", status: "pending" }
   ]
 };
